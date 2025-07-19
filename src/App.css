@@ -59,6 +59,41 @@
   line-height: 1.6;
 }
 
+.area-tags {
+  text-align: center;
+  margin-top: -0.5rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  color: #fbe3e8;
+  opacity: 0.8;
+}
+
+.filter-bar {
+  text-align: center;
+  margin: 1rem auto;
+  padding: 1rem;
+}
+
+.filter-bar button {
+  background-color: #2d0018;
+  color: #fbe3e8;
+  border: 1px solid #ff3366;
+  margin: 0 0.5rem;
+  padding: 0.5rem 1.2rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-bar button:hover,
+.filter-bar button.active {
+  background-color: #ff3366;
+  color: #1a000d;
+}
+
 .footer {
   background-color: #2d0018;
   padding: 1.5rem 0;
@@ -80,12 +115,18 @@
   text-decoration: underline;
 }
 
-.area-tags {
-  text-align: center;
-  margin-top: -0.5rem;
-  margin-bottom: 1.5rem;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.95rem;
-  color: #fbe3e8;
-  opacity: 0.8;
+@media (max-width: 768px) {
+  .intro-title {
+    font-size: 2.5rem;
+  }
+
+  .intro-text,
+  .area-tags,
+  .filter-bar button {
+    font-size: 1.2rem;
+  }
+
+  .footer {
+    font-size: 1.1rem;
+  }
 }
