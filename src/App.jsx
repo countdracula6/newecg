@@ -13,6 +13,15 @@ function App() {
     selectedCity === 'All' ? true : escort.city === selectedCity
   );
 
+  const renderAreas = () => {
+    if (selectedCity === 'São Paulo') {
+      return <p className="area-tags">Tatuapé · Guarulhos · Lapa · Centro · Pinheiros · Jardins · Moema · Bela Vista · Vila Olímpia</p>;
+    } else if (selectedCity === 'Rio de Janeiro') {
+      return <p className="area-tags">Leblon · Lapa · Niterói · Copacabana · Ipanema · Barra da Tijuca · Centro</p>;
+    }
+    return null;
+  };
+
   return (
     <div className="App">
       <Header />
@@ -28,6 +37,7 @@ function App() {
       </section>
 
       <FilterBar selectedCity={selectedCity} setSelectedCity={setSelectedCity} />
+      {renderAreas()}
 
       <main className="escort-list">
         {filteredEscorts.slice(0, 18).map((escort, index) => (
