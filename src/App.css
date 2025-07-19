@@ -1,116 +1,81 @@
-/* App.css */
-.page {
-  display: flex;
-  flex-direction: column;
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Poppins:wght@300;400;600&display=swap');
+
+.App {
+  background-color: #1a000d;
   min-height: 100vh;
-}
-
-.main-section {
-  flex: 1;
-  padding: 2rem;
-  background: linear-gradient(180deg, #000000 0%, #1a000b 100%);
-}
-
-.section-title {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
   color: white;
 }
 
-.section-desc {
+.escort-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  animation: fadeIn 1.2s ease-in;
+}
+
+.animated-card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 0.6s ease forwards;
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.intro {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
   text-align: center;
-  max-width: 800px;
-  margin: 0 auto 2rem;
-  font-size: 1.1rem;
+}
+
+.intro-title {
+  font-family: 'Uncial Antiqua', cursive;
+  font-size: 2rem;
+  color: #fbe3e8;
+  margin-bottom: 0.5rem;
+}
+
+.intro-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.05rem;
   color: #ccc;
   line-height: 1.6;
 }
 
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  padding-bottom: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-
-.section-title {
-  font-family: 'Metamorphous', cursive;
-  font-size: 2.2rem;
-  color: #dcdcdc;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
-  margin-bottom: 1rem;
+.footer {
+  background-color: #2d0018;
+  padding: 1.5rem 0;
   text-align: center;
-}
-
-.city-tabs {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
-}
-
-.city-tabs button {
-  background: rgba(255, 255, 255, 0.03);
-  color: #ccc;
-  border: 1px solid #444;
-  padding: 0.6rem 1.5rem;
-  border-radius: 30px;
-  font-size: 1rem;
+  color: #fbe3e8;
   font-family: 'Poppins', sans-serif;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(4px);
+  font-size: 0.95rem;
+  margin-top: 3rem;
+  border-top: 1px solid #3a001f;
 }
 
-.city-tabs button:hover {
-  background-color: rgba(227, 14, 53, 0.1);
-  color: #e30e35;
+.footer a {
+  color: #ff3366;
+  text-decoration: none;
+  margin: 0 0.5rem;
 }
 
-.city-tabs button.active {
-  background-color: #e30e35;
-  color: white;
-  border-color: #e30e35;
-  box-shadow: 0 0 12px rgba(227, 14, 53, 0.4);
+.footer a:hover {
+  text-decoration: underline;
 }
-
-.area-pills {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-bottom: 1.5rem;
-}
-
-.area-pills button {
-  background: rgba(255, 255, 255, 0.03);
-  color: #ccc;
-  border: 1px solid #444;
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-family: 'Poppins', sans-serif;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.area-pills button:hover {
-  background-color: rgba(227, 14, 53, 0.12);
-  color: #e30e35;
-}
-
-.area-pills button.active {
-  background-color: #e30e35;
-  color: white;
-  border-color: #e30e35;
-  box-shadow: 0 0 6px rgba(227, 14, 53, 0.4);
-}
-
-

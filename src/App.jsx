@@ -2,81 +2,39 @@ import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import EscortCard from './components/EscortCard';
-import escorts from './data/escorts.json';
+import FilterBar from './components/FilterBar';
+import escorts from './data/escorts';
 import { useState } from 'react';
 
 function App() {
-  const [selectedCity, setSelectedCity] = useState('São Paulo');
-  const [selectedArea, setSelectedArea] = useState('');
+  const [selectedCity, setSelectedCity] = useState('All');
 
-  const cityAreas = {
-    'São Paulo': ['Jardins', 'Moema', 'Bela Vista', 'Vila Olímpia', 'Centro', 'Pinheiros', 'Tatuapé', 'Guarulhos', 'Lapa'],
-    'Rio de Janeiro': ['Copacabana', 'Ipanema', 'Barra da Tijuca', 'Centro', 'Leblon', 'Lapa', 'Niterói']
-  };
-
-  const filteredEscorts = escorts.filter((escort) => {
-    return (
-      escort.city === selectedCity &&
-      (selectedArea === '' || escort.area === selectedArea)
-    );
-  });
+  const filteredEscorts = escorts.filter((escort) =>
+    selectedCity === 'All' ? true : escort.city === selectedCity
+  );
 
   return (
-    <div className="page">
+    <div className="App">
       <Header />
 
-      <main className="main-section">
-        <div className="city-tabs">
-          <button
-            className={selectedCity === 'São Paulo' ? 'active' : ''}
-            onClick={() => {
-              setSelectedCity('São Paulo');
-              setSelectedArea('');
-            }}
-          >
-            São Paulo
-          </button>
-          <button
-            className={selectedCity === 'Rio de Janeiro' ? 'active' : ''}
-            onClick={() => {
-              setSelectedCity('Rio de Janeiro');
-              setSelectedArea('');
-            }}
-          >
-            Rio de Janeiro
-          </button>
-        </div>
-
-        <div className="area-pills">
-          <button
-            className={selectedArea === '' ? 'active' : ''}
-            onClick={() => setSelectedArea('')}
-          >
-            All Areas
-          </button>
-          {cityAreas[selectedCity].map((area) => (
-            <button
-              key={area}
-              className={selectedArea === area ? 'active' : ''}
-              onClick={() => setSelectedArea(area)}
-            >
-              {area}
-            </button>
-          ))}
-        </div>
-
-        <h2 className="section-title">Explore {selectedCity} Companions</h2>
-        <p className="section-desc">
-          {selectedArea
-            ? `Now showing only ${selectedArea} area in ${selectedCity}.`
-            : `Browse all premium companions in ${selectedCity}.`}
+      <section className="intro">
+        <h2 className="intro-title">Welcome to ESCORTGIRLBRAZIL</h2>
+        <p className="intro-text">
+          Discover São Paulo and Rio de Janeiro’s most elegant and verified companions. Our carefully curated
+          selection of high-class Brazilian escorts offers authenticity, beauty, and discretion. Whether you’re
+          seeking unforgettable evenings or private luxury encounters, we connect you with real profiles — no
+          fakes, no games.
         </p>
+      </section>
 
-        <div className="gallery">
-          {filteredEscorts.map((escort) => (
-            <EscortCard key={escort.id} {...escort} />
-          ))}
-        </div>
+      <FilterBar selectedCity={selectedCity} setSelectedCity={setSelectedCity} />
+
+      <main className="escort-list">
+        {filteredEscorts.slice(0, 18).map((escort, index) => (
+          <div key={escort.id} style={{ animationDelay: `${index * 0.1}s` }} className="animated-card">
+            <EscortCard {...escort} />
+          </div>
+        ))}
       </main>
 
       <Footer />

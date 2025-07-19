@@ -1,0 +1,24 @@
+.filter-bar {
+  text-align: center;
+  margin: 1rem auto;
+  padding: 1rem;
+}
+
+.filter-bar button {
+  background-color: #2d0018;
+  color: #fbe3e8;
+  border: 1px solid #ff3366;
+  margin: 0 0.5rem;
+  padding: 0.5rem 1.2rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-bar button:hover,
+.filter-bar button.active {
+  background-color: #ff3366;
+  color: #1a000d;
+}
