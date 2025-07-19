@@ -72,17 +72,19 @@
 }
 
 .filter-bar {
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
   margin: 1rem auto;
   padding: 1rem;
-  flex-wrap: wrap;
+  max-width: 95%;
 }
 
 .filter-bar button {
   background-color: #2d0018;
   color: #fbe3e8;
   border: 1px solid #ff3366;
-  margin: 0.3rem;
   padding: 0.6rem 1.4rem;
   font-family: 'Poppins', sans-serif;
   font-size: 1rem;
@@ -151,5 +153,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 0.4rem;
   }
 }
