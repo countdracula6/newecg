@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "name": "Bianca",
+    "age": 24,
+    "city": "São Paulo",
+    "photo": "/photos/garota-1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Luana",
+    "age": 29,
+    "city": "Rio de Janeiro",
+    "photo": "/photos/garota-1.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Camila",
+    "age": 22,
+    "city": "Brasília",
+    "photo": "/photos/garota-1.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Nathalia",
+    "age": 27,
+    "city": "Florianópolis",
+    "photo": "/photos/garota-1.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Isis",
+    "age": 25,
+    "city": "São Paulo",
+    "photo": "/photos/garota-1.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Giovanna",
+    "age": 30,
+    "city": "Rio de Janeiro",
+    "photo": "/photos/garota-1.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Sabrina",
+    "age": 26,
+    "city": "Brasília",
+    "photo": "/photos/garota-1.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Larissa",
+    "age": 23,
+    "city": "Florianópolis",
+    "photo": "/photos/garota-1.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Helena",
+    "age": 28,
+    "city": "São Paulo",
+    "photo": "/photos/garota-1.jpg"
+  }
+]

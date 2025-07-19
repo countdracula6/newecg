@@ -1,0 +1,49 @@
+/* App.css */
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-section {
+  flex: 1;
+  padding: 2rem;
+  background: linear-gradient(180deg, #000000 0%, #1a000b 100%);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.section-desc {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding-bottom: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.section-title {
+  font-family: 'Metamorphous', cursive;
+  font-size: 2.2rem;
+  color: #dcdcdc;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+

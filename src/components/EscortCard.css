@@ -1,0 +1,92 @@
+.escort-card {
+  background-color: #111;
+  border-radius: 14px;
+  overflow: hidden;
+  color: white;
+  width: 300px;
+  height: 500px;
+  box-shadow: 0 0 20px rgba(227, 14, 53, 0.25);
+  border: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding-bottom: 1rem; /* ✅ added padding */
+}
+
+
+.escort-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 30px rgba(227, 14, 53, 0.45);
+}
+
+.escort-photo {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+
+.escort-info {
+  padding: 1rem;
+  text-align: center;
+  height: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.escort-info h2 {
+  margin: 0.5rem 0 0.3rem;
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.escort-info p {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.icon-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.icon {
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+.icon:hover {
+  color: #e30e35;
+}
+
+.icon.liked {
+  color: #e30e35;
+}
+
+.book-btn {
+  background-color: #e30e35;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 220px;
+  margin-top: 1rem;
+}
+
+
+.book-btn:hover {
+  background-color: #ff5a6f;
+}
