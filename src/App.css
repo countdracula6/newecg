@@ -47,3 +47,38 @@
   text-align: center;
 }
 
+.city-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.city-tabs button {
+  background: rgba(255, 255, 255, 0.03);
+  color: #ccc;
+  border: 1px solid #444;
+  padding: 0.6rem 1.5rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.city-tabs button:hover {
+  background-color: rgba(227, 14, 53, 0.1);
+  color: #e30e35;
+}
+
+.city-tabs button.active {
+  background-color: #e30e35;
+  color: white;
+  border-color: #e30e35;
+  box-shadow: 0 0 12px rgba(227, 14, 53, 0.4);
+}
+
+

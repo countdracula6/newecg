@@ -1,65 +1,20 @@
 [
-  {
-    "id": 1,
-    "name": "Bianca",
-    "age": 24,
-    "city": "São Paulo",
-    "photo": "/photos/garota-1.jpg"
-  },
-  {
-    "id": 2,
-    "name": "Luana",
-    "age": 29,
-    "city": "Rio de Janeiro",
-    "photo": "/photos/garota-1.jpg"
-  },
-  {
-    "id": 3,
-    "name": "Camila",
-    "age": 22,
-    "city": "Brasília",
-    "photo": "/photos/garota-1.jpg"
-  },
-  {
-    "id": 4,
-    "name": "Nathalia",
-    "age": 27,
-    "city": "Florianópolis",
-    "photo": "/photos/garota-1.jpg"
-  },
-  {
-    "id": 5,
-    "name": "Isis",
-    "age": 25,
-    "city": "São Paulo",
-    "photo": "/photos/garota-1.jpg"
-  },
-  {
-    "id": 6,
-    "name": "Giovanna",
-    "age": 30,
-    "city": "Rio de Janeiro",
-    "photo": "/photos/garota-1.jpg"
-  },
-  {
-    "id": 7,
-    "name": "Sabrina",
-    "age": 26,
-    "city": "Brasília",
-    "photo": "/photos/garota-1.jpg"
-  },
-  {
-    "id": 8,
-    "name": "Larissa",
-    "age": 23,
-    "city": "Florianópolis",
-    "photo": "/photos/garota-1.jpg"
-  },
-  {
-    "id": 9,
-    "name": "Helena",
-    "age": 28,
-    "city": "São Paulo",
-    "photo": "/photos/garota-1.jpg"
-  }
+  { "id": 1, "name": "Bianca", "age": 24, "city": "São Paulo", "area": "Jardins", "photo": "/photos/garota-1.jpg" },
+  { "id": 2, "name": "Luana", "age": 27, "city": "Rio de Janeiro", "area": "Leblon", "photo": "/photos/garota-1.jpg" },
+  { "id": 3, "name": "Isis", "age": 25, "city": "São Paulo", "area": "Pinheiros", "photo": "/photos/garota-1.jpg" },
+  { "id": 4, "name": "Camila", "age": 23, "city": "Rio de Janeiro", "area": "Copacabana", "photo": "/photos/garota-1.jpg" },
+  { "id": 5, "name": "Nathalia", "age": 30, "city": "São Paulo", "area": "Moema", "photo": "/photos/garota-1.jpg" },
+  { "id": 6, "name": "Giovanna", "age": 26, "city": "Rio de Janeiro", "area": "Barra da Tijuca", "photo": "/photos/garota-1.jpg" },
+  { "id": 7, "name": "Helena", "age": 29, "city": "São Paulo", "area": "Bela Vista", "photo": "/photos/garota-1.jpg" },
+  { "id": 8, "name": "Larissa", "age": 22, "city": "Rio de Janeiro", "area": "Centro", "photo": "/photos/garota-1.jpg" },
+  { "id": 9, "name": "Valentina", "age": 28, "city": "São Paulo", "area": "Vila Olímpia", "photo": "/photos/garota-1.jpg" },
+  { "id": 10, "name": "Sofia", "age": 24, "city": "Rio de Janeiro", "area": "Ipanema", "photo": "/photos/garota-1.jpg" },
+  { "id": 11, "name": "Juliana", "age": 26, "city": "São Paulo", "area": "Tatuapé", "photo": "/photos/garota-1.jpg" },
+  { "id": 12, "name": "Marina", "age": 25, "city": "Rio de Janeiro", "area": "Lapa", "photo": "/photos/garota-1.jpg" },
+  { "id": 13, "name": "Amanda", "age": 27, "city": "São Paulo", "area": "Centro", "photo": "/photos/garota-1.jpg" },
+  { "id": 14, "name": "Fernanda", "age": 28, "city": "Rio de Janeiro", "area": "Niterói", "photo": "/photos/garota-1.jpg" },
+  { "id": 15, "name": "Carolina", "age": 23, "city": "São Paulo", "area": "Lapa", "photo": "/photos/garota-1.jpg" },
+  { "id": 16, "name": "Bruna", "age": 24, "city": "Rio de Janeiro", "area": "Leblon", "photo": "/photos/garota-1.jpg" },
+  { "id": 17, "name": "Thais", "age": 29, "city": "São Paulo", "area": "Guarulhos", "photo": "/photos/garota-1.jpg" },
+  { "id": 18, "name": "Débora", "age": 30, "city": "Rio de Janeiro", "area": "Copacabana", "photo": "/photos/garota-1.jpg" }
 ]
