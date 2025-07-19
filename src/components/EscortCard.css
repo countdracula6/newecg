@@ -98,3 +98,16 @@
     height: 300px;
   }
 }
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInCard 0.5s ease forwards;
+}
+
+@keyframes fadeInCard {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

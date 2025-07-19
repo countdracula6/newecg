@@ -81,4 +81,36 @@
   box-shadow: 0 0 12px rgba(227, 14, 53, 0.4);
 }
 
+.area-pills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.area-pills button {
+  background: rgba(255, 255, 255, 0.03);
+  color: #ccc;
+  border: 1px solid #444;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.area-pills button:hover {
+  background-color: rgba(227, 14, 53, 0.12);
+  color: #e30e35;
+}
+
+.area-pills button.active {
+  background-color: #e30e35;
+  color: white;
+  border-color: #e30e35;
+  box-shadow: 0 0 6px rgba(227, 14, 53, 0.4);
+}
+
 

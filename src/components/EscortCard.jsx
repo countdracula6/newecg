@@ -13,7 +13,13 @@ const EscortCard = ({ name, age, city, photo }) => {
 
   return (
     <div className="escort-card" id={name}>
-      <img src={photo} alt={name} className="escort-photo" />
+      <img
+  src={photo}
+  alt={name}
+  className="escort-photo fade-in"
+  loading="lazy"
+/>
+
       <div className="escort-info">
         <h2>{name}, {age}</h2>
         <p>{city}</p>
