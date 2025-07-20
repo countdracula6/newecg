@@ -5,6 +5,7 @@ import EscortCard from '../components/EscortCard';
 import escorts from '../data/escorts';
 import { useState } from 'react';
 import '../App.css';
+import '../components/FilterBar.css';
 
 const Home = () => {
   const [selectedCity, setSelectedCity] = useState('All');
@@ -45,7 +46,9 @@ const Home = () => {
       </section>
 
       <section className="filters-section">
-        <FilterBar selectedCity={selectedCity} setSelectedCity={setSelectedCity} />
+        <div className="responsive-filters">
+          <FilterBar selectedCity={selectedCity} setSelectedCity={setSelectedCity} />
+        </div>
         {renderAreas()}
       </section>
 
@@ -63,6 +66,41 @@ const Home = () => {
       </main>
 
       <Footer />
+
+      <style jsx>{`
+        .filters-section {
+          margin: 24px auto;
+          padding: 12px;
+        }
+
+        .responsive-filters {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 12px;
+        }
+
+        @media (max-width: 600px) {
+          .responsive-filters button {
+            flex: 1 1 100%;
+            font-size: 1rem;
+            padding: 10px;
+          }
+        }
+
+        .burger-close-button {
+          display: block;
+          position: absolute;
+          top: 12px;
+          right: 18px;
+          font-size: 2rem;
+          color: #fff;
+          background: none;
+          border: none;
+          z-index: 10001;
+          cursor: pointer;
+        }
+      `}</style>
     </div>
   );
 };
