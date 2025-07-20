@@ -12,35 +12,31 @@ const EscortCard = ({ name, age, city, photo }) => {
   };
 
   return (
-    <div className="escort-card" id={name}>
+    <div className="animated-card escort-card" id={name}>
       <img
-  src={photo}
-  alt={name}
-  className="escort-photo fade-in"
-  loading="lazy"
-/>
+        src={photo}
+        alt={name}
+        className="escort-photo fade-in"
+        loading="lazy"
+      />
 
-      <div className="escort-info">
-        <h2>{name}, {age}</h2>
+      <div className="animated-card-content">
+        <h3>{name}, {age}</h3>
         <p>{city}</p>
-        <div className="icon-row">
-          <FaHeart
-            className={`icon ${liked ? 'liked' : ''}`}
-            onClick={toggleLike}
-            title="Favorite"
-          />
-          <FaVideo
-            className="icon"
-            title="Live Cam"
-            onClick={() => alert(`${name} is currently offline.`)}
-          />
-          <FaShareAlt
-            className="icon"
-            title="Share"
-            onClick={shareAd}
-          />
+
+        <div className="card-icons">
+          <i title="Favorite" onClick={toggleLike}>
+            <FaHeart className={liked ? 'liked' : ''} />
+          </i>
+          <i title="Live Cam" onClick={() => alert(`${name} is currently offline.`)}>
+            <FaVideo />
+          </i>
+          <i title="Share" onClick={shareAd}>
+            <FaShareAlt />
+          </i>
         </div>
-        <button className="book-btn">BOOK HER</button>
+
+        <button>BOOK HER</button>
       </div>
     </div>
   );

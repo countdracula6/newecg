@@ -1,141 +1,98 @@
-.escort-card {
-  background-color: #111;
-  border-radius: 14px;
-  overflow: hidden;
-  color: white;
-  width: 300px;
-  height: 500px;
-  box-shadow: 0 0 20px rgba(227, 14, 53, 0.25);
-  border: 1px solid #333;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+/* EscortCard component styles */
 
-.escort-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 30px rgba(227, 14, 53, 0.45);
-}
-
-.escort-photo {
+.animated-card {
   width: 100%;
-  height: 62%;
-  object-fit: cover;
-  border-top-left-radius: 14px;
-  border-top-right-radius: 14px;
-}
-
-.escort-info {
+  max-width: 350px;
+  border: 1px solid #990033;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(120, 0, 40, 0.15);
+  background: #fff;
+  opacity: 0;
+  animation: fadeInUp 0.6s forwards;
+  transition: transform 0.3s ease, border-color 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
-  height: 38%;
 }
 
-.escort-info h2 {
-  margin: 0.2rem 0;
-  font-size: 1.3rem;
-  font-weight: 600;
+.animated-card:hover {
+  transform: translateY(-5px);
+  border-color: #bb0044;
+}
+
+.escort-card img {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
+  display: block;
+}
+
+.animated-card-content {
+  padding: 16px;
   text-align: center;
-  color: #fff;
+  width: 100%;
 }
 
-.escort-info p {
-  margin: 0.2rem 0 1rem;
-  font-size: 1rem;
-  color: #ccc;
-  text-align: center;
-}
-
-.icon-row {
-  display: flex;
-  justify-content: center;
-  gap: 1.2rem;
+.animated-card-content h3 {
   font-size: 1.2rem;
-  margin-bottom: 1rem;
+  margin: 10px 0 6px;
+  color: #700028;
 }
 
-.icon {
-  cursor: pointer;
-  color: #ccc;
-  transition: color 0.3s ease;
+.animated-card-content p {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 12px;
 }
 
-.icon:hover {
-  color: #e30e35;
-}
-
-.icon.liked {
-  color: #e30e35;
-}
-
-.book-btn {
-  background-color: #e30e35;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  font-weight: bold;
+.animated-card-content button {
+  margin-top: 10px;
+  margin-bottom: 8px;
+  padding: 10px 16px;
+  background-color: #990033;
   color: white;
-  border-radius: 50px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 0.95rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  width: 100%;
-  max-width: 220px;
 }
 
-.book-btn:hover {
-  background-color: #ff5a6f;
+.animated-card-content button:hover {
+  background-color: #bb0044;
 }
 
-@media (max-width: 768px) {
-  .escort-card {
-    width: 90%;
-    height: auto;
-  }
-
-  .escort-photo {
-    height: 300px;
-  }
+.card-icons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  color: #990033;
 }
 
-.fade-in {
-  opacity: 0;
-  transform: translateY(10px);
-  animation: fadeInCard 0.5s ease forwards;
+.card-icons i {
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-@keyframes fadeInCard {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.card-icons i:hover {
+  transform: scale(1.2);
+  color: #bb0044;
 }
 
-.escort-list {
-  animation: fadeIn 1.2s ease-in;
-}
-
-.escort-list > * {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: slideUp 0.6s ease forwards;
-  animation-delay: calc(0.1s * var(--i));
-}
-
-@keyframes slideUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
+@keyframes fadeInUp {
   from {
+    transform: translateY(15px);
     opacity: 0;
   }
   to {
+    transform: translateY(0);
     opacity: 1;
   }
 }
-
