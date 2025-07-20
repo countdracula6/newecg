@@ -44,8 +44,10 @@ const Home = () => {
         </p>
       </section>
 
-      <FilterBar selectedCity={selectedCity} setSelectedCity={setSelectedCity} />
-      {renderAreas()}
+      <section className="filters-section">
+        <FilterBar selectedCity={selectedCity} setSelectedCity={setSelectedCity} />
+        {renderAreas()}
+      </section>
 
       <main className="masonry-grid">
         {filteredEscorts.slice(0, 9).map((escort, index) => (
