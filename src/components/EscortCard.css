@@ -1,6 +1,6 @@
 /* EscortCard component styles */
 
-.animated-card {
+.escort-card {
   width: 100%;
   max-width: 350px;
   border: 1px solid #990033;
@@ -8,20 +8,20 @@
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(120, 0, 40, 0.15);
   background: #fff;
-  opacity: 0;
-  animation: fadeInUp 0.6s forwards;
   transition: transform 0.3s ease, border-color 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: fadeInUp 0.6s forwards;
+  opacity: 0;
 }
 
-.animated-card:hover {
+.escort-card:hover {
   transform: translateY(-5px);
   border-color: #bb0044;
 }
 
-.escort-card img {
+.escort-photo {
   width: 100%;
   height: auto;
   max-height: 500px;
@@ -30,27 +30,48 @@
   display: block;
 }
 
-.animated-card-content {
+.escort-details {
   padding: 16px;
   text-align: center;
   width: 100%;
 }
 
-.animated-card-content h3 {
+.escort-name {
   font-size: 1.2rem;
   margin: 10px 0 6px;
   color: #700028;
 }
 
-.animated-card-content p {
+.escort-meta {
   font-size: 0.95rem;
   color: #444;
   margin-bottom: 12px;
 }
 
-.animated-card-content button {
+.escort-icons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
   margin-top: 10px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+.icon-btn {
+  font-size: 1.3rem;
+  color: #990033;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.icon-btn:hover {
+  transform: scale(1.2);
+  color: #bb0044;
+}
+
+.book-button {
+  margin-top: 10px;
   padding: 10px 16px;
   background-color: #990033;
   color: white;
@@ -62,28 +83,8 @@
   transition: background-color 0.3s ease;
 }
 
-.animated-card-content button:hover {
+.book-button:hover {
   background-color: #bb0044;
-}
-
-.card-icons {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 12px;
-  margin-bottom: 10px;
-  font-size: 1.3rem;
-  color: #990033;
-}
-
-.card-icons i {
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.card-icons i:hover {
-  transform: scale(1.2);
-  color: #bb0044;
 }
 
 @keyframes fadeInUp {
@@ -94,5 +95,27 @@
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .escort-card {
+    max-width: 90%;
+  }
+
+  .escort-name {
+    font-size: 1.1rem;
+  }
+
+  .escort-meta {
+    font-size: 0.9rem;
+  }
+
+  .icon-btn {
+    font-size: 1.5rem;
+  }
+
+  .book-button {
+    font-size: 1rem;
   }
 }

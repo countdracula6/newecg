@@ -1,42 +1,20 @@
+import React from 'react';
 import './EscortCard.css';
-import { FaHeart, FaVideo, FaShareAlt } from 'react-icons/fa';
-import { useState } from 'react';
+import { FaHeart, FaShareAlt, FaVideo } from 'react-icons/fa';
 
-const EscortCard = ({ name, age, city, photo }) => {
-  const [liked, setLiked] = useState(false);
-
-  const toggleLike = () => setLiked(!liked);
-  const shareAd = () => {
-    navigator.clipboard.writeText(`${window.location.href}#${name}`);
-    alert(`Link to ${name}'s profile copied!`);
-  };
-
+const EscortCard = ({ name, age, city, photo, onFavorite, onShare, onCam }) => {
   return (
-    <div className="animated-card escort-card" id={name}>
-      <img
-        src={photo}
-        alt={name}
-        className="escort-photo fade-in"
-        loading="lazy"
-      />
-
-      <div className="animated-card-content">
-        <h3>{name}, {age}</h3>
-        <p>{city}</p>
-
-        <div className="card-icons">
-          <i title="Favorite" onClick={toggleLike}>
-            <FaHeart className={liked ? 'liked' : ''} />
-          </i>
-          <i title="Live Cam" onClick={() => alert(`${name} is currently offline.`)}>
-            <FaVideo />
-          </i>
-          <i title="Share" onClick={shareAd}>
-            <FaShareAlt />
-          </i>
+    <div className="escort-card">
+      <img src={photo} alt={name} className="escort-photo" />
+      <div className="escort-details">
+        <h3 className="escort-name">{name}</h3>
+        <p className="escort-meta">{age} · {city}</p>
+        <div className="escort-icons">
+          <button onClick={onFavorite} title="Add to Favorites" className="icon-btn"><FaHeart /></button>
+          <button onClick={onCam} title="Watch Teaser" className="icon-btn"><FaVideo /></button>
+          <button onClick={onShare} title="Share" className="icon-btn"><FaShareAlt /></button>
         </div>
-
-        <button>BOOK HER</button>
+        <button className="book-button">Book Me</button>
       </div>
     </div>
   );

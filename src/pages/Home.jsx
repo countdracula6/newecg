@@ -9,6 +9,8 @@ import '../components/FilterBar.css';
 
 const Home = () => {
   const [selectedCity, setSelectedCity] = useState('All');
+  const [videoOpen, setVideoOpen] = useState(false);
+  const [selectedEscort, setSelectedEscort] = useState(null);
 
   const filteredEscorts = escorts.filter((escort) =>
     selectedCity === 'All' ? true : escort.city === selectedCity
@@ -29,6 +31,33 @@ const Home = () => {
       );
     }
     return null;
+  };
+
+  const handleFavorite = (name) => {
+    alert(`${name} added to favorites!`);
+  };
+
+  const handleShare = (name) => {
+    const shareText = `Check out ${name} on ESCORTGIRLBRAZIL!`;
+    if (navigator.share) {
+      navigator.share({
+        title: 'ESCORTGIRLBRAZIL',
+        text: shareText,
+        url: window.location.href,
+      });
+    } else {
+      alert('Share this escort: ' + window.location.href);
+    }
+  };
+
+  const handleCam = (escort) => {
+    setSelectedEscort(escort);
+    setVideoOpen(true);
+  };
+
+  const closeVideo = () => {
+    setVideoOpen(false);
+    setSelectedEscort(null);
   };
 
   return (
@@ -60,10 +89,26 @@ const Home = () => {
               age={escort.age}
               city={escort.city}
               photo={escort.image || './photos/garota-1.jpg'}
+              onFavorite={() => handleFavorite(escort.name)}
+              onShare={() => handleShare(escort.name)}
+              onCam={() => handleCam(escort)}
             />
           </div>
         ))}
       </main>
+
+      {videoOpen && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close" onClick={closeVideo}>&times;</span>
+            <h3>{selectedEscort?.name}'s Live Teaser</h3>
+            <video width="100%" controls autoPlay>
+              <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      )}
 
       <Footer />
 
@@ -101,8 +146,35 @@ const Home = () => {
           cursor: pointer;
         }
 
-        .mobile-nav.open .burger-close-button {
-          display: block;
+        .modal {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          background: rgba(0, 0, 0, 0.8);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 9999;
+        }
+
+        .modal-content {
+          background: #fff;
+          padding: 20px;
+          border-radius: 8px;
+          width: 90%;
+          max-width: 600px;
+          text-align: center;
+        }
+
+        .close {
+          position: absolute;
+          top: 10px;
+          right: 20px;
+          font-size: 1.5rem;
+          cursor: pointer;
+          color: #900;
         }
       `}</style>
     </div>
