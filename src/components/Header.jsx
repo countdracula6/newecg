@@ -8,6 +8,10 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
 
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
     <header className="header">
       <div className="container">
@@ -24,6 +28,13 @@ const Header = () => {
             <li><a href="#">How to Ad</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
+
+          {isOpen && (
+            <button className="burger-close-button" onClick={closeMenu}>
+              ✕
+            </button>
+          )}
+
           <div className="burger" onClick={toggleMenu}>
             <div></div>
             <div></div>

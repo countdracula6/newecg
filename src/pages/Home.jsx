@@ -100,6 +100,10 @@ const Home = () => {
           z-index: 10001;
           cursor: pointer;
         }
+
+        .mobile-nav.open .burger-close-button {
+          display: block;
+        }
       `}</style>
     </div>
   );
