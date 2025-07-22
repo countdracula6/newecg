@@ -81,9 +81,9 @@ const Home = () => {
         {renderAreas()}
       </section>
 
-      <main className="masonry-grid">
+      <main className="escort-grid">
         {filteredEscorts.slice(0, 9).map((escort, index) => (
-          <div key={escort.id} className="masonry-item" style={{ animationDelay: `${index * 0.1}s` }}>
+          <div key={escort.id} className="escort-card-wrapper animated-card" style={{ animationDelay: `${index * 0.1}s` }}>
             <EscortCard
               name={escort.name}
               age={escort.age}
@@ -103,10 +103,9 @@ const Home = () => {
             <span className="close" onClick={closeVideo}>&times;</span>
             <h3>{selectedEscort?.name}'s Live Teaser</h3>
             <video width="100%" controls autoPlay onEnded={closeVideo}>
-  <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
-
+              <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       )}
@@ -114,6 +113,28 @@ const Home = () => {
       <Footer />
 
       <style jsx>{`
+        .escort-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 24px;
+          padding: 24px;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+
+        .escort-card-wrapper {
+          display: flex;
+          justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+          .escort-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            padding: 16px;
+          }
+        }
+
         .filters-section {
           margin: 24px auto;
           padding: 12px;
