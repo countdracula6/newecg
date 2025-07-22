@@ -102,28 +102,33 @@
   .escort-card {
     max-width: 100%;
     padding: 6px;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
   }
 
   .escort-photo {
-    max-height: 420px;
+    max-height: 440px;
   }
 
   .escort-name {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .escort-meta {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .icon-btn {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .book-button {
-    font-size: 1.2rem;
-    padding: 14px 24px;
+    font-size: 1.3rem;
+    padding: 16px 30px;
+    margin-top: 14px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
   }
 }
 
