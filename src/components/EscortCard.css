@@ -2,11 +2,11 @@
 
 .escort-card {
   width: 100%;
-  max-width: 350px;
-  border: 1px solid #990033;
-  border-radius: 16px;
+  max-width: 100%;
+  border: 2px solid #88002e;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(120, 0, 40, 0.15);
+  box-shadow: 0 6px 18px rgba(120, 0, 40, 0.25);
   background: #fff;
   transition: transform 0.3s ease, border-color 0.3s ease;
   display: flex;
@@ -14,11 +14,12 @@
   align-items: center;
   animation: fadeInUp 0.6s forwards;
   opacity: 0;
+  margin-bottom: 12px;
 }
 
 .escort-card:hover {
-  transform: translateY(-5px);
-  border-color: #bb0044;
+  transform: translateY(-6px);
+  border-color: #cc0055;
 }
 
 .escort-photo {
@@ -26,7 +27,7 @@
   height: auto;
   max-height: 500px;
   object-fit: cover;
-  border-radius: 16px 16px 0 0;
+  border-radius: 20px 20px 0 0;
   display: block;
 }
 
@@ -37,27 +38,26 @@
 }
 
 .escort-name {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin: 10px 0 6px;
   color: #700028;
 }
 
 .escort-meta {
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   color: #444;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .escort-icons {
   display: flex;
   justify-content: center;
-  gap: 14px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  gap: 16px;
+  margin: 10px 0;
 }
 
 .icon-btn {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   color: #990033;
   background: none;
   border: none;
@@ -71,14 +71,14 @@
 }
 
 .book-button {
-  margin-top: 10px;
-  padding: 10px 16px;
+  margin-top: 8px;
+  padding: 12px 20px;
   background-color: #990033;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-weight: bold;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -100,22 +100,55 @@
 
 @media (max-width: 600px) {
   .escort-card {
-    max-width: 90%;
+    max-width: 100%;
+    padding: 6px;
+    margin-bottom: 16px;
+  }
+
+  .escort-photo {
+    max-height: 420px;
   }
 
   .escort-name {
-    font-size: 1.1rem;
-  }
-
-  .escort-meta {
-    font-size: 0.9rem;
-  }
-
-  .icon-btn {
     font-size: 1.5rem;
   }
 
-  .book-button {
-    font-size: 1rem;
+  .escort-meta {
+    font-size: 1.2rem;
   }
+
+  .icon-btn {
+    font-size: 1.8rem;
+  }
+
+  .book-button {
+    font-size: 1.2rem;
+    padding: 14px 24px;
+  }
+}
+
+/* Modal close button */
+.close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  background: none;
+  border: none;
+  z-index: 10001;
+}
+
+/* Auto-hide video container after playback */
+video::-webkit-media-controls-panel {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+video:focus {
+  outline: none;
+}
+
+video[autoplay]::-webkit-media-controls-start-playback-button {
+  display: none !important;
 }
