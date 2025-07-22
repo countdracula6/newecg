@@ -65,7 +65,7 @@ const Home = () => {
       <Header />
 
       <section className="intro">
-        <h2 className="intro-title">Welcome to ESCORTGIRLBRAZIL</h2>
+        <h1 className="intro-title">Welcome to ESCORTGIRLBRAZIL</h1>
         <p className="intro-text">
           Discover São Paulo and Rio de Janeiro’s most elegant and verified companions. Our carefully curated
           selection of high-class Brazilian escorts offers authenticity, beauty, and discretion. Whether you’re
@@ -97,6 +97,50 @@ const Home = () => {
           </div>
         ))}
       </main>
+
+      <section className="seo-section aligned-container">
+        <h2>The Best Escorts São Paulo and Rio de Janeiro Has to Offer</h2>
+        <h3>Unmatched Companionship and Authentic Encounters</h3>
+        <p>
+          Our Brazilian escort platform is known for delivering what it promises. We value commitment and authenticity.
+          Every model featured here strives to meet your expectations. Many are also experienced in massage,
+          offering deeply personal and relaxing encounters — the ultimate girlfriend experience.
+        </p>
+
+        <h3>Intelligent and Elegant Companions</h3>
+        <p>
+          Many of our escorts in São Paulo and Rio de Janeiro are real glamour or fashion models.
+          They're stunning, educated, and have a deep appreciation for Brazilian culture.
+          Most speak Portuguese and additional languages like English, Spanish, or Italian.
+        </p>
+
+        <h3>Escort Locations Across São Paulo and Rio</h3>
+        <p>
+          Whether you're looking in <strong>São Paulo</strong> — Tatuapé, Guarulhos, Lapa, Centro, Pinheiros, Jardins,
+          Moema, Bela Vista, or Vila Olímpia — or in <strong>Rio de Janeiro</strong> — Leblon, Lapa, Niterói,
+          Copacabana, Ipanema, Barra da Tijuca, or Centro — we've got you covered.
+          All escorts offer outcall services unless specified otherwise.
+        </p>
+
+        <h3>Your Desires, Understood</h3>
+        <p>
+          We’ve spent years listening to our clients and tailoring the experience to match your expectations.
+          Our returning clients trust us, and new clients will quickly see why.
+        </p>
+
+        <h3>Booking Made Easy</h3>
+        <p>
+          Browse the profiles, select your favorite, and use our contact form.
+          Our support is available 24/7. We help you choose, refine preferences,
+          and create a safe, luxurious, and discreet connection.
+        </p>
+
+        <h3>Mutual Respect and Adult Consent</h3>
+        <p>
+          All companions are verified and over 18. We do not tolerate illegal conduct,
+          mistreatment, or abuse — from either side. This is a respectful adult platform focused on companionship and mutual pleasure.
+        </p>
+      </section>
 
       {videoOpen && (
         <div className="modal">
@@ -156,6 +200,26 @@ const Home = () => {
             font-size: 1rem;
             padding: 10px;
           }
+        }
+
+        .seo-section {
+          padding: 48px 24px;
+          margin-top: 64px;
+          color: #f8f8f8;
+          max-width: 1200px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .seo-section h2, .seo-section h3 {
+          color: #ffb6c1;
+          margin-top: 32px;
+        }
+
+        .seo-section p {
+          line-height: 1.8;
+          font-size: 1.1rem;
+          margin-bottom: 20px;
         }
 
         .burger-close-button {

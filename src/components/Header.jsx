@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Header.css';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,12 +22,12 @@ const Header = () => {
 
         <nav>
           <ul className={`nav-links ${isOpen ? 'open' : ''}`}>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Brazilian Escorts</a></li>
-            <li><a href="#">Live Cam</a></li>
-            <li><a href="#">How to Ad</a></li>
-            <li><a href="#">Contact</a></li>
+              <li><Link to="/">Home</Link></li>
+    <li><Link to="/about">About Us</Link></li>
+    <li><Link to="/brazilian-escorts">Brazilian Escorts</Link></li>
+    <li><Link to="/live-cam">Live Cam</Link></li>
+    <li><Link to="/how-to-ad">How to Ad</Link></li>
+    <li><Link to="/contact">Contact</Link></li>
           </ul>
 
           {isOpen && (
