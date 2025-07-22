@@ -1,8 +1,9 @@
 import React from 'react';
 import './EscortCard.css';
 import { FaHeart, FaShareAlt, FaVideo } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
-const EscortCard = ({ name, age, city, photo, onFavorite, onShare, onCam }) => {
+const EscortCard = ({ name, age, city, photo, onFavorite, onShare, onCam, id }) => {
   return (
     <div className="escort-card">
       <img src={photo} alt={name} className="escort-photo" />
@@ -14,7 +15,7 @@ const EscortCard = ({ name, age, city, photo, onFavorite, onShare, onCam }) => {
           <button onClick={onCam} title="Watch Teaser" className="icon-btn"><FaVideo /></button>
           <button onClick={onShare} title="Share" className="icon-btn"><FaShareAlt /></button>
         </div>
-        <button className="book-button">Book Me</button>
+        <Link to={`/model/${id}`} className="book-button">BOOK ME</Link>
       </div>
     </div>
   );

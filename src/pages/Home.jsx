@@ -61,7 +61,7 @@ const Home = () => {
   };
 
   return (
-    <div className="App">
+    <div className="App" style={{ maxWidth: '1440px', margin: '0 auto', padding: '0 12px' }}>
       <Header />
 
       <section className="intro">
@@ -85,6 +85,7 @@ const Home = () => {
         {filteredEscorts.slice(0, 9).map((escort, index) => (
           <div key={escort.id} className="escort-card-wrapper animated-card" style={{ animationDelay: `${index * 0.1}s` }}>
             <EscortCard
+              id={escort.id}
               name={escort.name}
               age={escort.age}
               city={escort.city}
@@ -120,11 +121,13 @@ const Home = () => {
           padding: 24px;
           max-width: 1200px;
           margin: 0 auto;
+          box-sizing: border-box;
         }
 
         .escort-card-wrapper {
           display: flex;
           justify-content: center;
+          box-sizing: border-box;
         }
 
         @media (max-width: 768px) {

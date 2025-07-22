@@ -6,6 +6,7 @@ import LiveCam from './pages/LiveCam';
 import HowToAd from './pages/HowToAd';
 import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
+import ModelPage from './pages/ModelPage';
 import './App.css';
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/how-to-ad" element={<HowToAd />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy" element={<Privacy />} />
+        <Route path="/model/:id" element={<ModelPage />} />
       </Routes>
     </Router>
   );
