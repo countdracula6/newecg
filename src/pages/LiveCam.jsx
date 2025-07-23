@@ -8,11 +8,15 @@ const LiveCam = () => {
   const [streaming, setStreaming] = useState(false);
   const [chat, setChat] = useState('');
   const [messages, setMessages] = useState([]);
+  const [tips, setTips] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const [rating, setRating] = useState(null);
 
   useEffect(() => {
     let interval;
     if (streaming) {
       interval = setInterval(() => {
+        setDuration((d) => d + 1);
         setBalance((prev) => {
           const newBal = parseFloat((prev - 0.99).toFixed(2));
           if (newBal <= 0) {
@@ -22,7 +26,7 @@ const LiveCam = () => {
           }
           return newBal;
         });
-      }, 60000); // deduct every minute
+      }, 60000);
     }
     return () => clearInterval(interval);
   }, [streaming]);
@@ -34,19 +38,48 @@ const LiveCam = () => {
     }
   };
 
+  const handleTip = (amount) => {
+    if (balance >= amount) {
+      setTips((prev) => prev + amount);
+      setBalance((prev) => parseFloat((prev - amount).toFixed(2)));
+    } else {
+      alert('Insufficient balance to tip.');
+    }
+  };
+
+  const handleRating = (value) => {
+    setRating(value);
+    alert(`Thanks for rating the model ${value} stars!`);
+  };
+
   return (
     <div className="App" style={{ maxWidth: '1440px', margin: '0 auto', padding: '0 12px' }}>
       <Header />
       <section className="live-cam">
         <h1>Live Cam Experience</h1>
-        <p>Connect in real time. Pay-per-minute: <strong>$0.99</strong>. Your current balance: <strong>${balance.toFixed(2)}</strong></p>
+        <p>
+          Pay-per-minute: <strong>$0.99</strong> · Balance: <strong>${balance.toFixed(2)}</strong> · 
+          Tipped: <strong>${tips.toFixed(2)}</strong> · Time: <strong>{duration} min</strong>
+        </p>
 
         <div className="cam-area">
           <div className="video-box">
-            <div className="video-placeholder">{streaming ? 'Streaming...' : 'Camera Preview'}</div>
+            {streaming ? (
+              <video width="100%" height="300" controls autoPlay muted style={{ borderRadius: '8px' }}>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            ) : (
+              <div className="video-placeholder">Camera Preview</div>
+            )}
             <button onClick={() => setStreaming(true)} disabled={balance <= 0 || streaming}>
               {streaming ? 'Streaming Live' : 'Start Stream'}
             </button>
+            <div className="tip-buttons">
+              <button onClick={() => handleTip(1)}>Tip $1</button>
+              <button onClick={() => handleTip(5)}>Tip $5</button>
+              <button onClick={() => handleTip(10)}>Tip $10</button>
+            </div>
           </div>
 
           <div className="chat-box">
@@ -63,6 +96,15 @@ const LiveCam = () => {
               onKeyDown={(e) => e.key === 'Enter' && handleChatSend()}
             />
             <button onClick={handleChatSend}>Send</button>
+
+            {streaming && !rating && (
+              <div className="rating">
+                <p>Rate this session:</p>
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <button key={star} onClick={() => handleRating(star)}>{'★'.repeat(star)}</button>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -109,6 +151,10 @@ const LiveCam = () => {
           border: none;
           border-radius: 6px;
           cursor: pointer;
+          margin: 8px 6px 0 6px;
+        }
+        .tip-buttons {
+          margin-top: 16px;
         }
         .chat-box {
           flex: 1 1 400px;
@@ -140,6 +186,17 @@ const LiveCam = () => {
           border-radius: 6px;
           cursor: pointer;
           font-size: 1rem;
+        }
+        .rating {
+          margin-top: 20px;
+        }
+        .rating button {
+          margin: 0 4px;
+          font-size: 1.2rem;
+          background: none;
+          border: none;
+          color: #ffcc00;
+          cursor: pointer;
         }
       `}</style>
     </div>
