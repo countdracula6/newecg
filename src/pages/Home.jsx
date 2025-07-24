@@ -89,7 +89,8 @@ const Home = () => {
               name={escort.name}
               age={escort.age}
               city={escort.city}
-              photo={escort.image || './photos/garota-1.jpg'}
+              photo={`/photos/escort-${escort.id}-1.jpg`}
+
               onFavorite={() => handleFavorite(escort.name)}
               onShare={() => handleShare(escort.name)}
               onCam={() => handleCam(escort)}

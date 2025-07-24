@@ -1,3 +1,4 @@
+
 .model-page {
   max-width: 1200px;
   margin: 0 auto;
@@ -30,11 +31,19 @@
   border-radius: 10px;
   object-fit: cover;
   border: 2px solid #ff3366;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, filter 0.5s ease;
 }
 
 .gallery-photo:hover {
   transform: scale(1.03);
+}
+
+.blur-in {
+  filter: blur(10px);
+}
+
+.blur-in[src*="escort"] {
+  filter: blur(0);
 }
 
 .details-section {
@@ -69,13 +78,17 @@
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
   }
 
-  .gallery-photo {
-    flex: 0 0 auto;
+.gallery-photo {
+    flex: 0 0 100vw;
     scroll-snap-align: center;
-    width: 70vw;
+    width: 100vw;
+    height: auto;
   }
+}
 
   .details-section {
     padding: 1rem;
@@ -88,4 +101,59 @@
   .model-name {
     font-size: 1.6rem;
   }
+
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
 }
+
+.sms-button,
+.whatsapp-button {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ff3366;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.whatsapp-button {
+  background-color: #25D366;
+}
+
+.sms-button:hover,
+.whatsapp-button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.section-title {
+  text-align: center;
+  font-family: 'Uncial Antiqua', cursive;
+  color: #cc1f4a;
+  font-size: 1.6rem;
+  margin-bottom: 0.25rem;
+  line-height: 1.2;
+}
+
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
+  }
+}
+
+.section-wrapper {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+
