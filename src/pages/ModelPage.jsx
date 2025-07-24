@@ -51,7 +51,7 @@ const ModelPage = () => {
                 src={`/photos/escort-${escort.id}-${i + 1}.jpg`}
                 onError={(e) => { e.target.src = '/photos/default.jpg'; }}
                 alt={`Escort ${escort.name} ${i + 1}`}
-                className="gallery-photo blur-in"
+                className="gallery-photo"
                 loading="lazy"
               />
             ))}
@@ -60,7 +60,7 @@ const ModelPage = () => {
 
         <h3 className="section-title">My Profile</h3>
 
-<section className="details-section">
+        <section className="details-section">
           <ul className="info-list">
             <li><strong>Age:</strong> {escort.age}</li>
             <li><strong>City:</strong> {escort.city}</li>
@@ -78,21 +78,21 @@ const ModelPage = () => {
         </section>
 
         <div className="section-wrapper">
-  <h3 className="section-title">Get in Touch</h3>
-  <section className="contact-buttons"> 
-          <a href={`sms:+550000000000`} className="sms-button">Send SMS</a>
-          <a href={`https://wa.me/550000000000`} target="_blank" rel="noopener noreferrer" className="whatsapp-button">WhatsApp</a>
+          <h3 className="section-title">Get in Touch</h3>
+          <section className="contact-buttons">
+            <a href={`sms:+550000000000`} className="sms-button">Send SMS</a>
+            <a href={`https://wa.me/550000000000`} target="_blank" rel="noopener noreferrer" className="whatsapp-button">WhatsApp</a>
           </section>
-</div>
+        </div>
 
-        <section className="map-section" >
-          <h3 className="section-title" >Approximate Location</h3>
-          <div style={{ display: 'flex', justifyContent: 'center', padding: '1rem 0' }}>
+        <section className="contact-layout">
+          <div className="map-wrapper">
+            <h3 className="section-title">Approximate Location</h3>
             <iframe
               title="Escort Map"
               width="100%"
               height="300"
-              style={{ maxWidth: '600px', borderRadius: '12px', border: '1px solid #ff3366' }}
+              style={{ borderRadius: '12px', border: '1px solid #ff3366' }}
               frameBorder="0"
               loading="lazy"
               allowFullScreen
@@ -101,6 +101,25 @@ const ModelPage = () => {
             <p style={{ textAlign: 'center', marginTop: '0.5rem', fontSize: '0.9rem', color: '#fbe3e8' }}>
               *Location is approximate. For safety reasons, exact address will be shared upon confirmation.
             </p>
+          </div>
+
+          <div className="booking-wrapper">
+            <h3 className="section-title">Booking Request</h3>
+            <form className="booking-form" onSubmit={(e) => e.preventDefault()}>
+              <div className="form-group">
+                <label htmlFor="booking-date">Select Date:</label>
+                <input type="date" id="booking-date" name="booking-date" required />
+              </div>
+              <div className="form-group">
+                <label htmlFor="booking-time">Preferred Time:</label>
+                <input type="time" id="booking-time" name="booking-time" required />
+              </div>
+              <div className="form-group">
+                <label htmlFor="message">Your Message:</label>
+                <textarea id="message" name="message" rows="4" placeholder="Write a short message..." required></textarea>
+              </div>
+              <button type="submit" className="submit-button">Send Request</button>
+            </form>
           </div>
         </section>
       </main>
